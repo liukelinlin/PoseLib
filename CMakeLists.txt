@@ -15,15 +15,15 @@ add_subdirectory(${LIBRARY_FOLDER})
 
 # Benchmark
 option(WITH_BENCHMARK "Build benchmark example." OFF)
-if(WITH_BENCHMARK)
+#if(WITH_BENCHMARK)
 	add_subdirectory(benchmark)
-endif()
+#endif()
 
 # python bindings
-option(PYTHON_PACKAGE "Build python package." OFF)
-if(PYTHON_PACKAGE)
+option(PYTHON_PACKAGE "Build python package." ON)
+#if(PYTHON_PACKAGE)
 	add_subdirectory(pybind)
-endif()
+#endif()
 
 # Compilation options
 if(MSVC)
