@@ -1,5 +1,5 @@
 # setup PYTHON_EXECUTABLE
-find_package (Python COMPONENTS Interpreter Development)
+#find_package (Python COMPONENTS Interpreter Development)
 message(STATUS "Python_EXECUTABLE: " ${Python_EXECUTABLE})
 
 # generate `setup.py` file
