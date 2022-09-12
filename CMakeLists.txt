@@ -8,7 +8,7 @@ set(LIBRARY_FOLDER ${PROJECT_NAME})
 include(${PROJECT_SOURCE_DIR}/cmake/SetEnv.cmake)
 
 # Eigen
-find_package(Eigen3 3.4 REQUIRED)
+find_package(Eigen3 3.3.90 REQUIRED NO_MODULE)
 
 # Library sources
 add_subdirectory(${LIBRARY_FOLDER})
@@ -29,8 +29,5 @@ endif()
 if(MSVC)
 	target_compile_options(${LIBRARY_NAME} PRIVATE /bigobj /fp:fast)
 else()
-	target_compile_options(${LIBRARY_NAME} PRIVATE
-		-march=native -ffast-math -fno-unsafe-math-optimizations
-		-funroll-loops -fprefetch-loop-arrays -funswitch-loops
-	 	-Wall -Werror -fPIC)
+	target_compile_options(${LIBRARY_NAME} PRIVATE -Wall -Werror -fPIC)
 endif()
